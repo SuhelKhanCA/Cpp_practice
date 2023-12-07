@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cctype> // for isupper and islower functions
+#include <cctype>
 
 using namespace std;
 
@@ -12,7 +12,8 @@ int main() {
 
     // Count the number of vowels, upper case, and lower case letters
     int vowels = 0, upperCase = 0, lowerCase = 0;
-    for (char ch : inputString) {
+    for (int i = 0; i < inputString.length(); ++i) {
+        char ch = inputString[i];
         if (isalpha(ch)) {
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
                 ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
@@ -28,7 +29,7 @@ int main() {
     // Capitalize the first letter and convert the rest to lowercase
     if (!inputString.empty()) {
         inputString[0] = toupper(inputString[0]);
-        for (size_t i = 1; i < inputString.length(); ++i) {
+        for (int i = 1; i < inputString.length(); ++i) {
             inputString[i] = tolower(inputString[i]);
         }
     }
